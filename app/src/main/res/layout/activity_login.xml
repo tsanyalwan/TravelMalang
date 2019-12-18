@@ -34,6 +34,7 @@
             android:layout_marginTop="80dp"
             android:layout_marginLeft="20dp"
             android:textSize="20dp"
+            android:textColor="@color/hitam"
             android:text="USERNAME :" />
 
         <TextView
@@ -42,23 +43,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="190dp"
             android:layout_marginLeft="20dp"
+            android:textColor="@color/hitam"
             android:textSize="20dp"
             android:text="PASSWORD :" />
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputUser"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="120dp"
-            android:layout_marginLeft="20dp"
-            android:hint="Input Username" />
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputPass"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="230dp"
-            android:layout_marginLeft="20dp"
-            android:hint="Input Password" />
 
         <Button
             android:id="@+id/btbLogin"
@@ -66,7 +53,29 @@
             android:layout_height="59dp"
             android:layout_marginLeft="110dp"
             android:layout_marginTop="300dp"
-            android:text="Login" />
+            android:text="Login"
+            android:onClick="BtnLogin"/>
+
+        <EditText
+            android:id="@+id/inputUser"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="110dp"
+            android:layout_marginLeft="20dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Input Username" />
+
+        <EditText
+            android:id="@+id/inputPass"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="220dp"
+            android:layout_marginLeft="20dp"
+            android:ems="10"
+            android:hint="Input Password"
+            android:inputType="textPassword" />
+
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
