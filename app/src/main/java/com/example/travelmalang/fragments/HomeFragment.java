@@ -39,8 +39,10 @@ public class HomeFragment extends Fragment {
 
         recyclerView = view.findViewById(R.id.listMenu);
 
-        ItemMenuModels item = new ItemMenuModels("PAKET 1","adlah", R.drawable.ic_launcher_background);
+        ItemMenuModels item = new ItemMenuModels("PAKET 1","adlah", R.drawable.bromo);
         ListItemMenu.add(item);
+        ItemMenuModels item2 = new ItemMenuModels("PAKET 2","adlah", R.drawable.jeep);
+        ListItemMenu.add(item2);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         item_menu_adapters adapters = new item_menu_adapters(getActivity(), ListItemMenu);
