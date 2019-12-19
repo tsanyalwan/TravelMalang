@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.travelmalang.R;
 import com.example.travelmalang.fragments.HomeFragment;
+import com.example.travelmalang.fragments.PaketFragment;
 import com.example.travelmalang.models.ItemPaketModels;
 import com.example.travelmalang.models.LoginModels;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -54,6 +55,7 @@ public class ItemPaketActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
+
                 loading = ProgressDialog.show(ItemPaketActivity.this,
                         null,
                         "please wait..",
@@ -74,6 +76,7 @@ public class ItemPaketActivity extends AppCompatActivity {
                         startActivity(i);
                     }
                 });
+
             }
         });
     }

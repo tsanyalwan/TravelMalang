@@ -102,7 +102,7 @@ public class item_menu_adapters extends RecyclerView.Adapter<item_menu_adapters.
         return (itemMenu != null) ? itemMenu.size() : 0;
     }
 
-    public class MyHolderView extends RecyclerView.ViewHolder {
+    public static class MyHolderView extends RecyclerView.ViewHolder {
         public TextView nama_paket;
         public TextView deskripsi;
         public ImageView gambar;
