@@ -51,8 +51,8 @@ public class LoginActivity extends AppCompatActivity {
                 }else if (inputPass.equals("")){
                     inputUser.setError("Silahkan Masukkan Password");
                     inputUser.requestFocus();
-                }else if (inputPass.equals("alwan")&&inputUser.equals("alwan")){
-                    inputUser.setError("Username dan Password Tidak Valid");
+                }else if (inputPass.equals("")&&inputUser.equals("")){
+                    inputUser.setError("Username dan Password Harus Diisi");
                     inputUser.requestFocus();
                 }else{
                     loading = ProgressDialog.show(LoginActivity.this,
@@ -61,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
                             true,
                             false);
 
-                    LoginModels login = new LoginModels("alwan","alwan");
+                    final LoginModels login = new LoginModels(inputUser.getText().toString(),inputPass.getText().toString());
 
                     database.child("login").push().setValue(login).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
@@ -70,8 +70,9 @@ public class LoginActivity extends AppCompatActivity {
                             inputUser.setText("");
                             inputPass.setText("");
                             Toast.makeText(LoginActivity.this,"Data Berhasil Ditambahkan",Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(LoginActivity.this,MainActivity.class));
-                            finish();
+                            Intent i = new Intent(LoginActivity.this,MainActivity.class);
+                            i.putExtra("name",login.getUsername());
+                            startActivity(i);
                         }
                     });
                     }

@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.travelmalang.R;
 import com.example.travelmalang.fragments.HomeFragment;
@@ -23,6 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
 
+    Bundle b;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,9 +34,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
         // beri listener pada saat item/menu bottomnavigation terpilih
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
-
-        FragmentTransaction f = getSupportFragmentManager().beginTransaction().replace(R.id.changeFrame, new HomeFragment());
-        f.commit();
+        loadFragment(new HomeFragment());
     }
     private boolean loadFragment(Fragment fragment) {
         if (fragment != null) {
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 fragment = new ProfileFragment();
                 break;
         }
+        fragment.setArguments(b);
         return loadFragment(fragment);
     }
 }

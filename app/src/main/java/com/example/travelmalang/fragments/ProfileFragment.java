@@ -16,23 +16,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.travelmalang.R;
+import com.example.travelmalang.activities.LoginActivity;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import static android.app.Activity.RESULT_CANCELED;
+import static android.content.Intent.getIntent;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class ProfileFragment extends Fragment {
 
     private static final String TAG = ProfileFragment.class.getCanonicalName();
 
     private static final int GALLERY_REQUEST_CODE = 1;
+    private TextView txtUser;
+    private TextView txtPass;
 
     ImageView imageView;
 
