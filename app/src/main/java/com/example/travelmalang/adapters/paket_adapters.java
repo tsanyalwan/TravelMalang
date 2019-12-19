@@ -1,11 +1,13 @@
 package com.example.travelmalang.adapters;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -13,18 +15,20 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.travelmalang.R;
 import com.example.travelmalang.models.ItemMenuModels;
+import com.example.travelmalang.models.ItemPaketModels;
 import com.example.travelmalang.models.PaketModels;
 
+import java.nio.BufferUnderflowException;
 import java.util.List;
 
 public class paket_adapters extends RecyclerView.Adapter<paket_adapters.MyHolderView> {
 
     Context context;
     LayoutInflater inflater;
-    public List<PaketModels> data;
+    public List<ItemPaketModels> data;
     View itemMemuView;
 
-    public paket_adapters(Context c, List<PaketModels> data) {
+    public paket_adapters(Context c, List<ItemPaketModels> data) {
         this.context = c;
         this.data = data;
         this.inflater = LayoutInflater.from(this.context);
@@ -40,15 +44,17 @@ public class paket_adapters extends RecyclerView.Adapter<paket_adapters.MyHolder
 
     @Override
     public void onBindViewHolder(@NonNull MyHolderView holder, int position) {
-        final PaketModels paketModels = data.get(position);
+        final ItemPaketModels paketModels = data.get(position);
 
-        holder.gbr_paket.setImageResource(paketModels.getGbr_paket());
-        holder.txt_paket.setText(paketModels.getTxt_paket());
+        holder.gbr_paket.setImageResource(paketModels.getImgPaket());
+        holder.txt_paket.setText(paketModels.getTxtJudul());
+        Toast.makeText(context,String.valueOf(data.size()),Toast.LENGTH_SHORT).show();
+
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return (data != null) ? data.size() : 0;
     }
 
     public class MyHolderView extends RecyclerView.ViewHolder {

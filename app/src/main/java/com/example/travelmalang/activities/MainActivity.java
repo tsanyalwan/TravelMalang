@@ -36,6 +36,9 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         loadFragment(new HomeFragment());
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigation);
         // beri listener pada saat item/menu bottomnavigation terpilih
+        Intent i = getIntent();
+        int gambar = i.getIntExtra("gambar",0);
+        String paket = i.getStringExtra("paket");
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         loadFragment(new HomeFragment());
     }

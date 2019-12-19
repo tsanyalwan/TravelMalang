@@ -10,7 +10,7 @@
         android:layout_width="383dp"
         android:layout_height="107dp"
         android:layout_marginTop="40dp"
-        app:cardBackgroundColor="@color/abu"
+        app:cardBackgroundColor="@color/colorAccent"
         app:cardCornerRadius="9dp"
         app:cardElevation="3dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,6 +30,7 @@
             android:layout_marginLeft="210dp"
             android:layout_marginTop="20dp"
             android:text="TextView"
+            android:textColor="@color/white"
             android:textSize="30dp" />
 
         <TextView

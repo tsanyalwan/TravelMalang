@@ -24,7 +24,7 @@ public class HomeFragment extends Fragment {
     RecyclerView recyclerView;
     View view;
     item_menu_adapters adapters;
-    List<ItemMenuModels> ListItemMenu = new ArrayList<>();
+    List<ItemMenuModels> ListItemMenu;
 
 
     public HomeFragment() {
@@ -36,7 +36,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
          view = inflater.inflate(R.layout.fragment_home, container, false);
-
+        ListItemMenu = new ArrayList<>();
         recyclerView = view.findViewById(R.id.listMenu);
 
         ItemMenuModels item = new ItemMenuModels("PAKET 1","3 Hari 2 Malam", R.drawable.bromo);

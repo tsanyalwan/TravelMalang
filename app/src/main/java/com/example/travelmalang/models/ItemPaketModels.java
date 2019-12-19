@@ -1,5 +1,9 @@
 package com.example.travelmalang.models;
 
+import androidx.fragment.app.FragmentActivity;
+
+import java.util.List;
+
 public class ItemPaketModels {
     String txtJudul;
     String txtHarga;
@@ -48,4 +52,6 @@ public class ItemPaketModels {
         this.imgPaket = imgPaket;
     }
 
+    public void setKey(String key) {
+    }
 }

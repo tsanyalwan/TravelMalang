@@ -73,6 +73,8 @@ public class ItemPaketActivity extends AppCompatActivity {
                         txtHarga.setText("");
                         Toast.makeText(ItemPaketActivity.this,"Data Berhasil Ditambahkan",Toast.LENGTH_SHORT).show();
                         Intent i = new Intent(ItemPaketActivity.this,MainActivity.class);
+                        i.putExtra("gambar",a);
+                        i.putExtra("paket",b);
                         startActivity(i);
                     }
                 });
