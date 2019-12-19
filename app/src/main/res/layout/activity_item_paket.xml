@@ -44,14 +44,14 @@
 
     <TextView
         android:id="@+id/txtHarga"
-        android:layout_width="57dp"
-        android:layout_height="24dp"
-        android:layout_marginBottom="80dp"
+        android:layout_width="329dp"
+        android:layout_height="43dp"
+        android:layout_marginBottom="48dp"
         android:text="harga"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
+        app:layout_constraintHorizontal_bias="0.353"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
