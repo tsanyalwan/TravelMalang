@@ -18,6 +18,7 @@ public class ItemPaketActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_paket);
         imgPaket = findViewById(R.id.imgPaket);
-        imgPaket = findViewById(R.id.imgPaket);
+        txtJudul = findViewById(R.id.txtJudul);
+        txtHarga = findViewById(R.id.txtHarga);
     }
 }
