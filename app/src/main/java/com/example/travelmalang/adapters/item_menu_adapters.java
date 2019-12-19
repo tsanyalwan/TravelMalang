@@ -67,7 +67,7 @@ public class item_menu_adapters extends RecyclerView.Adapter<item_menu_adapters.
                     Intent intent = new Intent(view.getContext(), ItemPaketActivity.class);
                     intent.putExtra("gambar",R.drawable.jeep);
                     intent.putExtra("judul","PAKET 2");
-                    intent.putExtra("desd","Destinasi :"+
+                    intent.putExtra("desc","Destinasi :"+
                                                 "1. Jatim Park 1\n"+
                                                 "2. Jatim Park 2\n"+
                                                 "3. Jatim Park 3\n"+
