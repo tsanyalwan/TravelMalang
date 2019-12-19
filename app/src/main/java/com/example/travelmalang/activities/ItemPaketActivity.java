@@ -11,8 +11,9 @@ import com.example.travelmalang.R;
 public class ItemPaketActivity extends AppCompatActivity {
     public TextView txtJudul;
     public TextView txtHarga;
-    public ImageView imgPaket;
     public TextView txtDesc;
+    public ImageView imgPaket;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +21,7 @@ public class ItemPaketActivity extends AppCompatActivity {
         setContentView(R.layout.activity_item_paket);
         imgPaket = findViewById(R.id.imgPaket);
         txtJudul = findViewById(R.id.txtJudul);
+        txtDesc = findViewById(R.id.txtDesc);
         txtHarga = findViewById(R.id.txtHarga);
         imgPaket.setImageResource(getIntent().getExtras().getInt("gambar"));
         txtJudul.setText(getIntent().getExtras().getString("judul"));

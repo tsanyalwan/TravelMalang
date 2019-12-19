@@ -60,7 +60,7 @@ public class item_menu_adapters extends RecyclerView.Adapter<item_menu_adapters.
                                                     "2. Jatim Park 2\n"+
                                                     "3. Batu Night Spectacular\n"+
                                                     "4. Museum Ankgut\n");
-                    intent.putExtra("harga","Rp.900.000");
+                    intent.putExtra("harga","Total : Rp.900.000");
                     view.getContext().startActivity(intent);
                 }else if(position == 1){
                     Toast.makeText(view.getContext(),"Berhasil Memilih Paket 2",Toast.LENGTH_SHORT).show();
@@ -74,7 +74,7 @@ public class item_menu_adapters extends RecyclerView.Adapter<item_menu_adapters.
                                                 "4. Eco Green Park\n"+
                                                 "4. Museum Ankgut\n");
                     intent.putExtra("desd","Destinasi :");
-                    intent.putExtra("harga","Rp.1.200.000");
+                    intent.putExtra("harga","Total : Rp.1.200.000");
                     view.getContext().startActivity(intent);
                 }
             }
