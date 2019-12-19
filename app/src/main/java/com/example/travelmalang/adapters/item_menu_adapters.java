@@ -54,16 +54,18 @@ public class item_menu_adapters extends RecyclerView.Adapter<item_menu_adapters.
                     Toast.makeText(view.getContext(),"Berhasil Memilih Paket 1",Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(view.getContext(), ItemPaketActivity.class);
                     intent.putExtra("gambar",R.drawable.bromo);
-                    intent.putExtra("judul","PAKET 1\n Destinasi : \n Jatim park 1, 2 \n" +
-                            "\t\t\tBatu Night Spektakular\n" +
-                            "\t\t\tMuseum Angkut "  );
-                    intent.putExtra("harga","Rp.1.200.000");
+                    intent.putExtra("judul","PAKET 1\n Destinasi : \n Jatim Park 1, 2 \n"+
+                            "\t\t\t Batu Night Spektacular\n"+
+                            "\t\t\t Museum Angkut");
+                    intent.putExtra("harga","Rp.900.000");
                     view.getContext().startActivity(intent);
                 }else if(position == 1){
                     Toast.makeText(view.getContext(),"Berhasil Memilih Paket 2",Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(view.getContext(), ItemPaketActivity.class);
                     intent.putExtra("gambar",R.drawable.bromo);
-                    intent.putExtra("judul","PAKET 2");
+                    intent.putExtra("judul","PAKET 2\n Destinati : \n Jatim Park 1, 2, 3 \n"+
+                            "\t\t\t Predators Fun Park\n"+
+                            "\t\t\t Eco Green Park");
                     intent.putExtra("harga","Rp.1.200.000");
                     view.getContext().startActivity(intent);
                 }
