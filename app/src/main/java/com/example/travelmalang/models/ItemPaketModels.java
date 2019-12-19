@@ -13,6 +13,9 @@ public class ItemPaketModels {
         this.imgPaket = imgPaket;
     }
 
+    public ItemPaketModels(){
+
+    }
     public String getTxtDesc() {
         return txtDesc;
     }
@@ -44,4 +47,5 @@ public class ItemPaketModels {
     public void setImgPaket(int imgPaket) {
         this.imgPaket = imgPaket;
     }
+
 }

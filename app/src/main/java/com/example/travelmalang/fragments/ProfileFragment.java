@@ -1,13 +1,17 @@
 package com.example.travelmalang.fragments;
 
 
-import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.provider.MediaStore;
 import android.util.Log;
@@ -20,13 +24,19 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.travelmalang.R;
-import com.example.travelmalang.activities.LoginActivity;
+import com.example.travelmalang.adapters.item_menu_adapters;
+import com.example.travelmalang.models.ItemMenuModels;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import static android.app.Activity.RESULT_CANCELED;
-import static android.content.Intent.getIntent;
 
 public class ProfileFragment extends Fragment {
 
@@ -35,6 +45,15 @@ public class ProfileFragment extends Fragment {
     private static final int GALLERY_REQUEST_CODE = 1;
     private TextView txtUser;
     private TextView txtPass;
+
+    private DatabaseReference database;
+    private ProgressDialog loading;
+    List<ItemMenuModels> paketItemList;
+    private CardView cvPaket;
+
+    RecyclerView recyclerView;
+    View view;
+    item_menu_adapters itemMenuAdapters;
 
     ImageView imageView;
 

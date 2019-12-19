@@ -4,6 +4,7 @@ public class ItemMenuModels {
     public String nama_paket;
     public String deskripsi;
     public int gambar;
+    public String key;
 
     public ItemMenuModels(String nama_paket, String deskripsi, int gambar) {
         this.nama_paket = nama_paket;
@@ -33,5 +34,13 @@ public class ItemMenuModels {
 
     public void setDeskripsi(String deskripsi) {
         this.deskripsi = deskripsi;
+    }
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
     }
 }

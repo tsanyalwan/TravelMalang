@@ -43,6 +43,8 @@ public class HomeFragment extends Fragment {
         ListItemMenu.add(item);
         ItemMenuModels item2 = new ItemMenuModels("PAKET 2","4 Hari 3 Malam", R.drawable.jeep);
         ListItemMenu.add(item2);
+        ItemMenuModels item3 = new ItemMenuModels("PAKET 1","3 Hari 2 Malam", R.drawable.bromo);
+        ListItemMenu.add(item3);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         item_menu_adapters adapters = new item_menu_adapters(getActivity(), ListItemMenu);
