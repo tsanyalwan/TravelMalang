@@ -54,7 +54,9 @@ public class item_menu_adapters extends RecyclerView.Adapter<item_menu_adapters.
                     Toast.makeText(view.getContext(),"Berhasil Memilih Paket 1",Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(view.getContext(), ItemPaketActivity.class);
                     intent.putExtra("gambar",R.drawable.bromo);
-                    intent.putExtra("judul","PAKET 1");
+                    intent.putExtra("judul","PAKET 1\n Destinasi : \n Jatim park 1, 2 \n" +
+                            "\t\t\tBatu Night Spektakular\n" +
+                            "\t\t\tMuseum Angkut "  );
                     intent.putExtra("harga","Rp.1.200.000");
                     view.getContext().startActivity(intent);
                 }else if(position == 1){
