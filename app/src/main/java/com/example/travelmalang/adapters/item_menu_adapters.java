@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,13 +36,23 @@ public class item_menu_adapters extends RecyclerView.Adapter<item_menu_adapters.
     }
 
     @Override
-    public void onBindViewHolder(@NonNull item_menu_adapters.MyHolderView holder, int position) {
+    public void onBindViewHolder(@NonNull item_menu_adapters.MyHolderView holder, final int position) {
         //ambil satu item hero
         ItemMenuModels menu = itemMenu.get(position);
         //set text heroName berdasarkan data dari model hero
         holder.nama_paket.setText(menu.getNama_paket());
         holder.deskripsi.setText(menu.getDeskripsi());
         holder.gambar.setImageResource(menu.getGambar());
+        holder.gambar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(position == 0){
+                    Toast.makeText(view.getContext(),"Anda Memilih Paket 1",Toast.LENGTH_SHORT).show();
+                }else if(position == 1){
+                    Toast.makeText(view.getContext(),"Anda Memilih Paket 1",Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
     }
 
