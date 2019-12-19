@@ -54,18 +54,26 @@ public class item_menu_adapters extends RecyclerView.Adapter<item_menu_adapters.
                     Toast.makeText(view.getContext(),"Berhasil Memilih Paket 1",Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(view.getContext(), ItemPaketActivity.class);
                     intent.putExtra("gambar",R.drawable.bromo);
-                    intent.putExtra("judul","PAKET 1\n Destinasi : \n Jatim Park 1, 2 \n"+
-                            "\t\t\t Batu Night Spektacular\n"+
-                            "\t\t\t Museum Angkut");
+                    intent.putExtra("judul","PAKET 1");
+                    intent.putExtra("desc","Destinasi :\n"+
+                                                    "1. Jatim Park 1\n"+
+                                                    "2. Jatim Park 2\n"+
+                                                    "3. Batu Night Spectacular\n"+
+                                                    "4. Museum Ankgut\n");
                     intent.putExtra("harga","Rp.900.000");
                     view.getContext().startActivity(intent);
                 }else if(position == 1){
                     Toast.makeText(view.getContext(),"Berhasil Memilih Paket 2",Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(view.getContext(), ItemPaketActivity.class);
-                    intent.putExtra("gambar",R.drawable.bromo);
-                    intent.putExtra("judul","PAKET 2\n Destinati : \n Jatim Park 1, 2, 3 \n"+
-                            "\t\t\t Predators Fun Park\n"+
-                            "\t\t\t Eco Green Park");
+                    intent.putExtra("gambar",R.drawable.jeep);
+                    intent.putExtra("judul","PAKET 2\n"+
+                                                "1. Jatim Park 1\n"+
+                                                "2. Jatim Park 2\n"+
+                                                "3. Jatim Park 3\n"+
+                                                "3. Batu Night Spectacular\n"+
+                                                "4. Eco Green Park\n"+
+                                                "4. Museum Ankgut\n");
+                    intent.putExtra("desd","Destinasi :");
                     intent.putExtra("harga","Rp.1.200.000");
                     view.getContext().startActivity(intent);
                 }

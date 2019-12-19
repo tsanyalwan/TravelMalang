@@ -32,7 +32,7 @@
         android:id="@+id/txtJudul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="DESKRIPSI"
+        android:text="JUDUL"
         android:textColor="@color/hitam"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -40,7 +40,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgPaket"
-        app:layout_constraintVertical_bias="0.221" />
+        app:layout_constraintVertical_bias="0.126" />
 
     <TextView
         android:id="@+id/txtHarga"
@@ -55,7 +55,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnConf"
         android:layout_width="366dp"
         android:layout_height="43dp"
         android:layout_marginBottom="16dp"
@@ -63,5 +63,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.488"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/txtDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="296dp"
+        android:text="Deskripsi"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnConf"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
