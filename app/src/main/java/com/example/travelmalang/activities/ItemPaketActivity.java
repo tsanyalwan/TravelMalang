@@ -13,8 +13,11 @@ import android.widget.Toast;
 
 import com.example.travelmalang.R;
 import com.example.travelmalang.fragments.HomeFragment;
+import com.example.travelmalang.models.ItemPaketModels;
 import com.example.travelmalang.models.LoginModels;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class ItemPaketActivity extends AppCompatActivity {
     public TextView txtJudul;
@@ -23,29 +26,54 @@ public class ItemPaketActivity extends AppCompatActivity {
     public ImageView imgPaket;
     public Button btnConf;
 
+    private DatabaseReference database;
+    private ProgressDialog loading;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_paket);
+
+        database = FirebaseDatabase.getInstance().getReference();
+
         imgPaket = findViewById(R.id.imgPaket);
         txtJudul = findViewById(R.id.txtJudul);
         txtDesc = findViewById(R.id.txtDesc);
         txtHarga = findViewById(R.id.txtHarga);
         btnConf = findViewById(R.id.btnConf);
-        imgPaket.setImageResource(getIntent().getExtras().getInt("gambar"));
-        txtJudul.setText(getIntent().getExtras().getString("judul"));
-        txtDesc.setText(getIntent().getExtras().getString("desc"));
-        txtHarga.setText(getIntent().getExtras().getString("harga"));
+        final int a = getIntent().getExtras().getInt("gambar");
+        final String b = getIntent().getExtras().getString("judul");
+        final String c = getIntent().getExtras().getString("desc");
+        final String d = getIntent().getExtras().getString("harga");
+        imgPaket.setImageResource(a);
+        txtJudul.setText(b);
+        txtDesc.setText(c);
+        txtHarga.setText(d);
         btnConf.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
-                Toast.makeText(ItemPaketActivity.this,"Data Berhasil Ditambahkan",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(ItemPaketActivity.this,HomeFragment.class));
-//                finish();
-//                Intent intent = new Intent(view.getContext(), HomeFragment.class);
-//                view.getContext().startActivity(intent);
+                loading = ProgressDialog.show(ItemPaketActivity.this,
+                        null,
+                        "please wait..",
+                        true,
+                        false);
+
+                final ItemPaketModels paket = new ItemPaketModels(b,c,d,a);
+
+                database.child("paket").push().setValue(paket).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        loading.dismiss();
+                        txtJudul.setText("");
+                        txtDesc.setText("");
+                        txtHarga.setText("");
+                        Toast.makeText(ItemPaketActivity.this,"Data Berhasil Ditambahkan",Toast.LENGTH_SHORT).show();
+                        Intent i = new Intent(ItemPaketActivity.this,MainActivity.class);
+                        startActivity(i);
+                    }
+                });
             }
         });
     }
