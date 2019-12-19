@@ -13,16 +13,17 @@
         android:layout_height="1110dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.412"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.456"
-        app:srcCompat="@drawable/bromo" />
+        app:layout_constraintVertical_bias="0.422"
+        app:srcCompat="@drawable/malang" />
 
     <TextView
         android:id="@+id/font"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="BROMO KUY"
+        android:text="WISATA KUY"
         android:textColor="@color/white"
         android:textSize="40dp"
         android:textStyle="bold"
@@ -43,5 +44,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.355"
-        app:srcCompat="@drawable/goal" />
+        app:srcCompat="@drawable/sun" />
 </androidx.constraintlayout.widget.ConstraintLayout>
