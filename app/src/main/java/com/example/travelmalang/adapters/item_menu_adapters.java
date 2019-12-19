@@ -73,7 +73,7 @@ public class item_menu_adapters extends RecyclerView.Adapter<item_menu_adapters.
                                                 "3. Jatim Park 3\n"+
                                                 "3. Batu Night Spectacular\n"+
                                                 "4. Eco Green Park\n"+
-                                                "5. Museum Ankgut\n");
+                                                "5. Museum Angkut\n");
                     intent.putExtra("harga","Total : Rp.1.200.000");
                     view.getContext().startActivity(intent);
                 }
