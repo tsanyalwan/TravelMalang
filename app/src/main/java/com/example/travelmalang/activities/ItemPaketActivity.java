@@ -20,5 +20,8 @@ public class ItemPaketActivity extends AppCompatActivity {
         imgPaket = findViewById(R.id.imgPaket);
         txtJudul = findViewById(R.id.txtJudul);
         txtHarga = findViewById(R.id.txtHarga);
+        imgPaket.setImageResource(getIntent().getExtras().getInt("gambar"));
+        txtJudul.setText(getIntent().getExtras().getString("judul"));
+        txtHarga.setText(getIntent().getExtras().getString("harga"));
     }
 }

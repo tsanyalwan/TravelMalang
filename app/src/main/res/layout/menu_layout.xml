@@ -6,6 +6,7 @@
     android:orientation="vertical" >
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cvMenu"
         android:layout_width="383dp"
         android:layout_height="107dp"
         android:layout_marginTop="16dp"

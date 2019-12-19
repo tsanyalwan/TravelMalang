@@ -1,6 +1,7 @@
 package com.example.travelmalang.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,9 +10,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.travelmalang.R;
+import com.example.travelmalang.activities.ItemPaketActivity;
 import com.example.travelmalang.models.ItemMenuModels;
 import java.util.List;
 
@@ -43,11 +46,16 @@ public class item_menu_adapters extends RecyclerView.Adapter<item_menu_adapters.
         holder.nama_paket.setText(menu.getNama_paket());
         holder.deskripsi.setText(menu.getDeskripsi());
         holder.gambar.setImageResource(menu.getGambar());
-        holder.gambar.setOnClickListener(new View.OnClickListener() {
+        holder.cvMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(position == 0){
                     Toast.makeText(view.getContext(),"Anda Memilih Paket 1",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(view.getContext(), ItemPaketActivity.class);
+                    intent.putExtra("gambar",R.drawable.bromo);
+                    intent.putExtra("judul","PAKET 1");
+                    intent.putExtra("harga","Rp.1.200.000");
+                    view.getContext().startActivity(intent);
                 }else if(position == 1){
                     Toast.makeText(view.getContext(),"Anda Memilih Paket 1",Toast.LENGTH_SHORT).show();
                 }
@@ -65,12 +73,14 @@ public class item_menu_adapters extends RecyclerView.Adapter<item_menu_adapters.
         public TextView nama_paket;
         public TextView deskripsi;
         public ImageView gambar;
+        public CardView cvMenu;
 
         public MyHolderView(@NonNull View itemView) {
             super(itemView);
             nama_paket = itemView.findViewById(R.id.nama_paket);
             deskripsi = itemView.findViewById(R.id.deskripsi);
             gambar = itemView.findViewById(R.id.gambar);
+            cvMenu = itemView.findViewById(R.id.cvMenu);
         }
     }
 }
