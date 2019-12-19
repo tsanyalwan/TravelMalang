@@ -39,9 +39,9 @@ public class HomeFragment extends Fragment {
 
         recyclerView = view.findViewById(R.id.listMenu);
 
-        ItemMenuModels item = new ItemMenuModels("PAKET 1","4 Hari 3 Malam", R.drawable.bromo);
+        ItemMenuModels item = new ItemMenuModels("PAKET 1","3 Hari 2 Malam", R.drawable.bromo);
         ListItemMenu.add(item);
-        ItemMenuModels item2 = new ItemMenuModels("PAKET 2","adlah", R.drawable.jeep);
+        ItemMenuModels item2 = new ItemMenuModels("PAKET 2","4 Hari 3 Malam", R.drawable.jeep);
         ListItemMenu.add(item2);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));

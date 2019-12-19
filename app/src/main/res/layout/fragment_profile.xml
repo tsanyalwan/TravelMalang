@@ -7,7 +7,7 @@
     tools:context=".fragments.ProfileFragment" >
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/imgProfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="112dp"
@@ -27,7 +27,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.376"
-        android:onClick="btnProfile"/>
+        />
 
     <TextView
         android:id="@+id/textView6"
