@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "230864368789",
+    "firebase_url": "https://travelmalang-5eef9.firebaseio.com",
+    "project_id": "travelmalang-5eef9",
+    "storage_bucket": "travelmalang-5eef9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:230864368789:android:d776357c11e8c22361979c",
+        "android_client_info": {
+          "package_name": "com.example.travelmalang"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "230864368789-9li81pgfriv9b29ihegt7946ag1cul3f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.travelmalang",
+            "certificate_hash": "8d42fb087f15abad07d61e997985ac90a8db27d6"
+          }
+        },
+        {
+          "client_id": "230864368789-gnvhq2sh3h7jhpmnifk979lbriacnj69.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAn3IjpEDl3_apXAuF2IMKt6EH9UiM_YsY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "230864368789-gnvhq2sh3h7jhpmnifk979lbriacnj69.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
