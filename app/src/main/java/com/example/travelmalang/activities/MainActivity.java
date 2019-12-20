@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
             i.putExtra(Intent.EXTRA_TEXT,"Hai, Terima Kasih Telah Menggunakan Aplikasi Kami, Apakah ada yang bida kami bantu?");
         startActivity(i);
         }catch (ActivityNotFoundException e){
-            
+
         }
     }
 }
