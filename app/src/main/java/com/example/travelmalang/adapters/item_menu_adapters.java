@@ -79,7 +79,7 @@ public class item_menu_adapters extends RecyclerView.Adapter<item_menu_adapters.
                 }else if(position == 2){
                     Toast.makeText(view.getContext(),"Berhasil Memilih Paket 3",Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(view.getContext(), ItemPaketActivity.class);
-                    intent.putExtra("gambar",R.drawable.jeep);
+                    intent.putExtra("gambar",R.drawable.malang);
                     intent.putExtra("judul","PAKET 3");
                     intent.putExtra("desc","Destinasi :"+
                             "1. Jatim Park 1\n"+

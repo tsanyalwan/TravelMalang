@@ -51,8 +51,6 @@ public class PaketFragment extends Fragment {
         Intent i = getActivity().getIntent();
         int gambar = i.getIntExtra("gambar",0);
         String paket = i.getStringExtra("paket");
-        Toast.makeText(getActivity(),paket,Toast.LENGTH_SHORT).show();
-
 
         database = FirebaseDatabase.getInstance().getReference();
 
