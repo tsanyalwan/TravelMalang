@@ -24,8 +24,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.travelmalang.R;
+import com.example.travelmalang.activities.ItemPaketActivity;
+import com.example.travelmalang.activities.MainActivity;
 import com.example.travelmalang.adapters.item_menu_adapters;
 import com.example.travelmalang.models.ItemMenuModels;
+import com.example.travelmalang.models.ItemPaketModels;
+import com.example.travelmalang.models.ProfileModels;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -43,18 +48,7 @@ public class ProfileFragment extends Fragment {
     private static final String TAG = ProfileFragment.class.getCanonicalName();
 
     private static final int GALLERY_REQUEST_CODE = 1;
-    private TextView txtUser;
-    private TextView txtPass;
-
-    private DatabaseReference database;
-    private ProgressDialog loading;
-    List<ItemMenuModels> paketItemList;
-    private CardView cvPaket;
-
-    RecyclerView recyclerView;
     View view;
-    item_menu_adapters itemMenuAdapters;
-
     ImageView imageView;
 
     public ProfileFragment() {
@@ -67,7 +61,7 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         final int GET_FROM_GALLERY = 3;
-        View view = inflater.inflate(R.layout.fragment_profile,
+        view = inflater.inflate(R.layout.fragment_profile,
                 container, false);
         imageView = view.findViewById(R.id.imgProfil);
         Button button = (Button) view.findViewById(R.id.btnProfile);
