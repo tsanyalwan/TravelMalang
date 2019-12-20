@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +18,9 @@ import com.example.travelmalang.R;
 import com.example.travelmalang.models.ItemMenuModels;
 import com.example.travelmalang.models.ItemPaketModels;
 import com.example.travelmalang.models.PaketModels;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.nio.BufferUnderflowException;
 import java.util.List;
@@ -27,6 +31,7 @@ public class paket_adapters extends RecyclerView.Adapter<paket_adapters.MyHolder
     LayoutInflater inflater;
     public List<ItemPaketModels> data;
     View itemMemuView;
+    DatabaseReference database;
 
     public paket_adapters(Context c, List<ItemPaketModels> data) {
         this.context = c;
@@ -48,7 +53,21 @@ public class paket_adapters extends RecyclerView.Adapter<paket_adapters.MyHolder
 
         holder.gbr_paket.setImageResource(paketModels.getImgPaket());
         holder.txt_paket.setText(paketModels.getTxtJudul());
-        Toast.makeText(context,String.valueOf(data.size()),Toast.LENGTH_SHORT).show();
+
+        final String id = paketModels.getKey();
+        database = FirebaseDatabase.getInstance().getReference();
+
+        holder.btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                database.child("paket").child(id).removeValue().addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+
+                    }
+                });
+            }
+        });
 
     }
 
@@ -61,11 +80,13 @@ public class paket_adapters extends RecyclerView.Adapter<paket_adapters.MyHolder
         public TextView txt_paket;
         public ImageView gbr_paket;
         public CardView CardViewPaket;
+        public Button btnDelete;
 
         public MyHolderView(@NonNull View itemView) {
             super(itemView);
             txt_paket = itemView.findViewById(R.id.txt_paket);
             gbr_paket = itemView.findViewById(R.id.gbr_Paket);
+            btnDelete = itemView.findViewById(R.id.btnDelete);
             CardViewPaket = itemView.findViewById(R.id.CardViewPaket);
         }
     }

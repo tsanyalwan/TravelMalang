@@ -8,6 +8,7 @@ public class ItemPaketModels {
     String txtJudul;
     String txtHarga;
     String txtDesc;
+    String key;
     int imgPaket;
 
     public ItemPaketModels(String txtJudul, String txtHarga, String txtDesc, int imgPaket) {
@@ -53,5 +54,10 @@ public class ItemPaketModels {
     }
 
     public void setKey(String key) {
+        this.key = key;
+    }
+
+    public String getKey() {
+        return key;
     }
 }
