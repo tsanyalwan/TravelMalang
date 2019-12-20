@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -90,5 +92,13 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
         return true;
     }
 
-
+    public void email(MenuItem item){
+        try{
+            Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto :"+"info.malangwisata@gmail.com"));
+            i.putExtra(Intent.EXTRA_TEXT,"Hai, Terima Kasih Telah Menggunakan Aplikasi Kami, Apakah ada yang bida kami bantu?");
+        startActivity(i);
+        }catch (ActivityNotFoundException e){
+            
+        }
+    }
 }
