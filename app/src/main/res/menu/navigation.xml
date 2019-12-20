@@ -2,6 +2,9 @@
     <item android:id="@+id/action_home"
         android:title="Home"
         android:icon="@drawable/home" />
+    <item android:id="@+id/action_paket"
+        android:title="Paket"
+        android:icon="@android:drawable/star_big_off" />
     <item android:id="@+id/action_profile"
         android:title="Profile"
         android:icon="@drawable/avatar" />

@@ -24,7 +24,7 @@ public class HomeFragment extends Fragment {
     RecyclerView recyclerView;
     View view;
     item_menu_adapters adapters;
-    List<ItemMenuModels> ListItemMenu = new ArrayList<>();
+    List<ItemMenuModels> ListItemMenu;
 
 
     public HomeFragment() {
@@ -36,13 +36,15 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
          view = inflater.inflate(R.layout.fragment_home, container, false);
-
+        ListItemMenu = new ArrayList<>();
         recyclerView = view.findViewById(R.id.listMenu);
 
-        ItemMenuModels item = new ItemMenuModels("PAKET 1","4 Hari 3 Malam", R.drawable.bromo);
+        ItemMenuModels item = new ItemMenuModels("PAKET 1","3 Hari 2 Malam", R.drawable.bromo);
         ListItemMenu.add(item);
-        ItemMenuModels item2 = new ItemMenuModels("PAKET 2","adlah", R.drawable.jeep);
+        ItemMenuModels item2 = new ItemMenuModels("PAKET 2","4 Hari 3 Malam", R.drawable.jeep);
         ListItemMenu.add(item2);
+        ItemMenuModels item3 = new ItemMenuModels("PAKET 3","5 Hari 4 Malam", R.drawable.bromo);
+        ListItemMenu.add(item3);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         item_menu_adapters adapters = new item_menu_adapters(getActivity(), ListItemMenu);

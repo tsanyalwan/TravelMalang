@@ -54,17 +54,42 @@ public class item_menu_adapters extends RecyclerView.Adapter<item_menu_adapters.
                     Toast.makeText(view.getContext(),"Berhasil Memilih Paket 1",Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(view.getContext(), ItemPaketActivity.class);
                     intent.putExtra("gambar",R.drawable.bromo);
-                    intent.putExtra("judul","PAKET 1\n Destinasi : \n Jatim park 1, 2 \n" +
-                            "\t\t\tBatu Night Spektakular\n" +
-                            "\t\t\tMuseum Angkut "  );
-                    intent.putExtra("harga","Rp.1.200.000");
+                    intent.putExtra("judul","PAKET 1");
+                    intent.putExtra("desc","Destinasi :\n"+
+                                                    "1. Jatim Park 1\n"+
+                                                    "2. Jatim Park 2\n"+
+                                                    "3. Batu Night Spectacular\n"+
+                                                    "4. Museum Ankgut\n");
+                    intent.putExtra("harga","Total : Rp.900.000");
                     view.getContext().startActivity(intent);
                 }else if(position == 1){
                     Toast.makeText(view.getContext(),"Berhasil Memilih Paket 2",Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(view.getContext(), ItemPaketActivity.class);
-                    intent.putExtra("gambar",R.drawable.bromo);
+                    intent.putExtra("gambar",R.drawable.jeep);
                     intent.putExtra("judul","PAKET 2");
-                    intent.putExtra("harga","Rp.1.200.000");
+                    intent.putExtra("desc","Destinasi :"+
+                                                "1. Jatim Park 1\n"+
+                                                "2. Jatim Park 2\n"+
+                                                "3. Jatim Park 3\n"+
+                                                "4. Batu Night Spectacular\n"+
+                                                "5. Eco Green Park\n"+
+                                                "6. Museum Angkut \n");
+                    intent.putExtra("harga","Total : Rp.1.200.000");
+                    view.getContext().startActivity(intent);
+                }else if(position == 2){
+                    Toast.makeText(view.getContext(),"Berhasil Memilih Paket 3",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(view.getContext(), ItemPaketActivity.class);
+                    intent.putExtra("gambar",R.drawable.jeep);
+                    intent.putExtra("judul","PAKET 3");
+                    intent.putExtra("desc","Destinasi :"+
+                            "1. Jatim Park 1\n"+
+                            "2. Jatim Park 2\n"+
+                            "3. Jatim Park 3\n"+
+                            "4. Batu Night Spectacular\n"+
+                            "5. Eco Green Park\n"+
+                            "6. Eco Green Park\n"+
+                            "7. Selecta \n");
+                    intent.putExtra("harga","Total : Rp.1.400.000");
                     view.getContext().startActivity(intent);
                 }
             }
@@ -77,7 +102,7 @@ public class item_menu_adapters extends RecyclerView.Adapter<item_menu_adapters.
         return (itemMenu != null) ? itemMenu.size() : 0;
     }
 
-    public class MyHolderView extends RecyclerView.ViewHolder {
+    public static class MyHolderView extends RecyclerView.ViewHolder {
         public TextView nama_paket;
         public TextView deskripsi;
         public ImageView gambar;

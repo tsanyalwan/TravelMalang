@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="hitam">#000000</color>
+    <color name="abu"> #85929e </color>
     <color name="white">#FFFFFF</color>
     <color name="bg_splash_1">#1abc9c</color>
     <color name="bg_splash_2">#23c9ff</color>

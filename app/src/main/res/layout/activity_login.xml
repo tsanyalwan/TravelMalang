@@ -49,11 +49,13 @@
 
         <Button
             android:id="@+id/btnLogin"
-            android:layout_width="108dp"
-            android:layout_height="59dp"
-            android:layout_marginLeft="110dp"
+            android:layout_width="281dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="300dp"
-            android:text="Login"/>
+            android:background="@color/bg_screen3"
+            android:textColor="@color/white"
+            android:text="Login" />
 
         <EditText
             android:id="@+id/inputUser"

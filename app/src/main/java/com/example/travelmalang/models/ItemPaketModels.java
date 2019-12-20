@@ -1,14 +1,32 @@
 package com.example.travelmalang.models;
 
+import androidx.fragment.app.FragmentActivity;
+
+import java.util.List;
+
 public class ItemPaketModels {
     String txtJudul;
     String txtHarga;
+    String txtDesc;
+    String key;
     int imgPaket;
 
-    public ItemPaketModels(String txtJudul, String txtHarga, int imgPaket) {
+    public ItemPaketModels(String txtJudul, String txtHarga, String txtDesc, int imgPaket) {
         this.txtJudul = txtJudul;
         this.txtHarga = txtHarga;
+        this.txtDesc = txtDesc;
         this.imgPaket = imgPaket;
+    }
+
+    public ItemPaketModels(){
+
+    }
+    public String getTxtDesc() {
+        return txtDesc;
+    }
+
+    public void setTxtDesc(String txtDesc) {
+        this.txtDesc = txtDesc;
     }
 
     public String getTxtJudul() {
@@ -33,5 +51,13 @@ public class ItemPaketModels {
 
     public void setImgPaket(int imgPaket) {
         this.imgPaket = imgPaket;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public String getKey() {
+        return key;
     }
 }
