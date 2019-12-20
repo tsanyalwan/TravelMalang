@@ -86,19 +86,21 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.itemLogout) {
             startActivity(new Intent(this, LoginActivity.class));
-        }else if(item.getItemId()== R.id.itemContact){
-            startActivity(new Intent(this, LoginActivity.class));
+        } else if (item.getItemId() == R.id.itemContact) {
+            email();
         }
         return true;
     }
 
-    public void email(MenuItem item){
-        try{
-            Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("mailto :"+"info.malangwisata@gmail.com"));
-            i.putExtra(Intent.EXTRA_TEXT,"Hai, Terima Kasih Telah Menggunakan Aplikasi Kami, Apakah ada yang bida kami bantu?");
-        startActivity(i);
-        }catch (ActivityNotFoundException e){
+    public void email(){
+        Intent email = new Intent(Intent.ACTION_SEND);
+        email.putExtra(Intent.EXTRA_EMAIL, new String[]{ "info.holidaymalang@gmail.com"});
+        email.putExtra(Intent.EXTRA_SUBJECT, "Thanks for All Support");
+        email.putExtra(Intent.EXTRA_TEXT, "Hai you There ! thanks to use ou application, du you need a hand?");
 
-        }
+        //need this to prompts email client only
+        email.setType("message/rfc822");
+
+        startActivity(Intent.createChooser(email, "Choose an Email client :"));
     }
 }
